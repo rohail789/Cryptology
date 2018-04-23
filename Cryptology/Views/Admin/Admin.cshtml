@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin Page</h2>
+    <div class="navbar-collapse collapse">
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Create", "Users")'" class="btn btn-primary" value="Add Users" />
+        </p>
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Index", "Users")'" class="btn btn-primary" value="List of Users" />
+        </p>
+
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Create","Currencies")'" class="btn btn-primary" value="Add currencies" />
+        </p>
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Index", "Currencies")'" class="btn btn-primary" value="List of currencies" />
+        </p>
+ 
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Create", "Exchnges")'" class="btn btn-primary" value="Add Exchanges" />
+        </p>
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Index", "Exchnges")'" class="btn btn-primary" value="List of Exchanges" />
+        </p>
+        <p class="nav navbar-nav ">
+            <input type="button" onclick="location.href='@Url.Action("Aik", "Home")'" class="btn btn-primary" value="Update Api In Database" />
+        </p>
+
+    </div>

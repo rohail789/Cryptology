@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<div>
+    <div class="row">
+        <table class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>CurrencyLong</th>
+                    <th>MinConfirmation</th>
+                    <th>CoinType</th>
+                    <th>IsActive</th>
+                    <th>TxFee</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var dta = ViewBag.dt;
+                }
+                @foreach( var res in dta)
+            {
+                    <tr>
+                        <td>@res.Currency</td>
+                        <td>@res.CurrencyLong</td>
+                        <td>@res.MinConfirmation</td>
+                        <td>@res.CoinType</td>
+                        <td>@res.IsActive</td>
+                        <td>@res.TxFee</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

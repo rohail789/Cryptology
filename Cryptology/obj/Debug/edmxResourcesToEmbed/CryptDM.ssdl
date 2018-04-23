@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CryptologyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="cId" />
+    </Key>
+    <Property Name="cId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price_usd" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Symbol" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Price_btc" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="24h_volume_usd" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Market_cap_usd" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Available_supply" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Max_supply" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Percent_change_7d" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Last_updated" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exchnges">
+    <Key>
+      <PropertyRef Name="eId" />
+    </Key>
+    <Property Name="eId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ename" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="CryptologyModelStoreContainer">
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exchnges" EntityType="Self.Exchnges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

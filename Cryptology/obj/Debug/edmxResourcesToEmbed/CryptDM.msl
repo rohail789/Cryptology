@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CryptologyModelStoreContainer" CdmEntityContainer="CryptologyDbContext">
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="CryptologyModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+          <ScalarProperty Name="Percent_change_7d" ColumnName="Percent_change_7d" />
+          <ScalarProperty Name="Max_supply" ColumnName="Max_supply" />
+          <ScalarProperty Name="Available_supply" ColumnName="Available_supply" />
+          <ScalarProperty Name="Market_cap_usd" ColumnName="Market_cap_usd" />
+          <ScalarProperty Name="C24h_volume_usd" ColumnName="24h_volume_usd" />
+          <ScalarProperty Name="Price_btc" ColumnName="Price_btc" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Price_usd" ColumnName="Price_usd" />
+          <ScalarProperty Name="Cname" ColumnName="cname" />
+          <ScalarProperty Name="CId" ColumnName="cId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exchnges">
+      <EntityTypeMapping TypeName="CryptologyModel.Exchnge">
+        <MappingFragment StoreEntitySet="Exchnges">
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="eId" ColumnName="eId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(CryptologyModel.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="pword" ColumnName="pword" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

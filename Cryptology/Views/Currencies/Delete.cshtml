@@ -1,0 +1,112 @@
+﻿@model Cryptology.Currency
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Currency</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_usd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_usd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_btc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_btc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C24h_volume_usd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C24h_volume_usd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Market_cap_usd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Market_cap_usd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available_supply)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available_supply)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Max_supply)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Max_supply)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percent_change_7d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percent_change_7d)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_updated)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

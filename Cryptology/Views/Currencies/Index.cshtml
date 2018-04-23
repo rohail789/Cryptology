@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Cryptology.Currency>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price_usd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price_btc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C24h_volume_usd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Market_cap_usd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Available_supply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Max_supply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Percent_change_7d)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_updated)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_usd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Symbol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_btc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C24h_volume_usd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Market_cap_usd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Available_supply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Max_supply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Percent_change_7d)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_updated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CId })
+        </td>
+    </tr>
+}
+
+</table>

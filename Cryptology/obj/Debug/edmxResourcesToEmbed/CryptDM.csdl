@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CryptologyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CryptologyDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="CryptologyModel.User" />
+    <EntitySet Name="Currencies" EntityType="CryptologyModel.Currency" />
+    <EntitySet Name="Exchnges" EntityType="CryptologyModel.Exchnge" />
+  </EntityContainer>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CId" />
+    </Key>
+    <Property Name="CId" Type="Int32" Nullable="false" />
+    <Property Name="Cname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price_usd" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Price_btc" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="C24h_volume_usd" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Market_cap_usd" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Available_supply" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Max_supply" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Percent_change_7d" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Last_updated" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exchnge">
+    <Key>
+      <PropertyRef Name="eId" />
+    </Key>
+    <Property Name="eId" Type="Int32" Nullable="false" />
+    <Property Name="ename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,41 @@
+﻿@model Cryptology.User
+
+@{
+    ViewBag.Title = "logIn";
+}
+
+<h2>LOG IN</h2>
+    @using (Html.BeginForm("logIn", "AuthUser", FormMethod.Post))
+    {
+        <p class="text-danger">@ViewBag.msg</p>
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.pword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.PasswordFor(model => model.pword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.pword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="LOG IN" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+
